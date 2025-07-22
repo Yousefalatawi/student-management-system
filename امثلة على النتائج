@@ -1,0 +1,61 @@
+نتائج الاستعلامات
+1. الطلاب المتفوقين (معدل > 90):
+- Ahmed Ali (95.5)
+- Ali Hassan (92.3)  
+- Sara Ahmed (100.0)
+- Layla Noor (97.8)
+- Alex Brown (100.0)
+
+2. الطلاب الراسبين (معدل < 60):
+- Omar Khalid (45.5)
+- Adam Jones (55.2)
+
+3. الأسماء التي تبدأ بـ A:
+- Ahmed Ali
+- Anna Smith
+- Ali Hassan  
+- Adam Jones
+- Alex Brown
+
+4. الأسماء 4 خانات:
+(لا يوجد أسماء 4 خانات بالضبط في البيانات)
+5. الدوال التجميعية:
+- المتوسط: 83.66
+- الأعلى: 100.0
+- الأقل: 45.5
+
+6. المتفوقين في المستوى 6 بمعدل 100:
+- Sara Ahmed
+- Alex Brown
+
+7. طلاب المستوى 1 عمرهم 15-16:
+- Ahmed Ali (15)
+- Anna Smith (16)
+- Omar Khalid (15)
+- Zara Khan (16)
+
+8. عدد طلاب المستوى 2:
+- 3 طلاب
+
+9. المسارات:
+- Science
+- Arts
+- Math
+
+10. أسماء المواد بأحرف كبيرة:
+- MATHEMATICS
+- PHYSICS
+- CHEMISTRY
+- BIOLOGY
+- ENGLISH
+
+11. المتوسط مقرب للأسفل: 83
+
+12. تحويل الجنس:
+- Ahmed Ali -> Male
+- Anna Smith -> Female
+- إلخ...
+
+13. بعد زيادة 5 درجات للراسبين:
+- Omar Khalid: 45.5 → 50.5
+- Adam Jones: 55.2 → 60.2
