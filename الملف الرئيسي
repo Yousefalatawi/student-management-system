@@ -1,0 +1,103 @@
+-- Student Management System - 
+
+-- إنشاء الجداول
+CREATE TABLE Students (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    age INT,
+    gender CHAR(1),
+    level_num INT,
+    track VARCHAR(50),
+    gpa DECIMAL(5,2)
+);
+
+CREATE TABLE Subjects (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50)
+);
+
+-- إدراج البيانات
+INSERT INTO Students (name, age, gender, level_num, track, gpa) VALUES 
+('Ahmed Ali', 15, 'M', 1, 'Science', 95.5),
+('Anna Smith', 16, 'F', 1, 'Arts', 88.0),
+('Ali Hassan', 17, 'M', 2, 'Science', 92.3),
+('Sara Ahmed', 18, 'F', 6, 'Math', 100.0),
+('Omar Khalid', 15, 'M', 1, 'Science', 45.5),
+('Layla Noor', 19, 'F', 6, 'Arts', 97.8),
+('Adam Jones', 20, 'M', 2, 'Math', 55.2),
+('Zara Khan', 16, 'F', 1, 'Science', 78.9),
+('Alex Brown', 21, 'M', 6, 'Arts', 100.0),
+('Mona Said', 17, 'F', 2, 'Math', 83.4);
+
+INSERT INTO Subjects (name) VALUES 
+('mathematics'), ('physics'), ('chemistry'), ('biology'), ('english');
+
+
+-- الاستعلامات المطلوبة
+
+
+-- 1. إنشاء جدول الطلاب المتفوقين (معدل > 90)
+CREATE TABLE Excellent_Students AS
+SELECT * FROM Students WHERE gpa > 90;
+
+-- 2. إنشاء جدول الطلاب الراسبين (معدل < 60)
+CREATE TABLE Failed_Students AS
+SELECT * FROM Students WHERE gpa < 60;
+
+-- 3. الأسماء التي تبدأ بحرف A
+SELECT name FROM Students WHERE name LIKE 'A%';
+
+-- 4. الأسماء 4 فراغاات
+SELECT name FROM Students WHERE LENGTH(name) = 4;
+
+-- 5. الدوال التجميعية
+SELECT 
+    AVG(gpa) AS 'المتوسط',
+    MAX(gpa) AS 'الأعلى', 
+    MIN(gpa) AS 'الأقل'
+FROM Students;
+
+-- 6. المتفوقين في المستوى 6 بمعدل 100
+SELECT name FROM Students 
+WHERE level_num = 6 AND gpa = 100;
+
+-- 7. طلاب المستوى 1 عمرهم 15-16
+SELECT name, age FROM Students 
+WHERE level_num = 1 AND age BETWEEN 15 AND 16;
+
+-- 8. عدد طلاب المستوى 2
+SELECT COUNT(*) AS 'عدد الطلاب' 
+FROM Students WHERE level_num = 2;
+
+-- 9. المسارات بدون تكرار
+SELECT DISTINCT track FROM Students;
+
+-- 10. أسماء المواد بأحرف كبيرة
+SELECT UPPER(name) FROM Subjects;
+
+-- 11. المتوسط مقرب للأسفل
+SELECT FLOOR(AVG(gpa)) AS 'المتوسط مقرب' FROM Students;
+
+-- 12. تحويل رموز الجنس
+SELECT name,
+CASE 
+    WHEN gender = 'F' THEN 'Female'
+    WHEN gender = 'M' THEN 'Male'
+END AS gender_full
+FROM Students;
+
+-- 13. زيادة 5 درجات للراسبين
+UPDATE Students SET gpa = gpa + 5 WHERE gpa < 60;
+
+
+-- عرض النتائج النهائية
+
+
+-- عرض جميع الطلاب
+SELECT * FROM Students ORDER BY gpa DESC;
+
+-- عرض الطلاب المتفوقين
+SELECT * FROM Excellent_Students;
+
+-- عرض الطلاب الراسبين
+SELECT * FROM Failed_Students;
